@@ -53,7 +53,7 @@ summary(vLifetimeObserved)
 
 #19
 vLifetimeObserved51=apply(mChurnDynamic[,-(1:50)],1,function(x) min(which(x)))
-vLifetimeObserved51[vLifetimeObserved51==Inf] = 50+1/0.05
+vLifetimeObserved51[vLifetimeObserved51==Inf] = 40+1/0.05
 summary(vLifetimeObserved51)
 
 #20
@@ -102,7 +102,7 @@ load("X:/Analisten/TRaining/Casus/Week 2/XINSURANCE.RData")
 source('X:/Analisten/TRaining/Casus/Week 2/Define_fExtend.R')
 
 # 24
-dfMINI = dfXINSURANCE[1:1000,c("ID", "Year", "Churn")]
+dfMINI = dfXINSURANCE[1:100,c("ID", "Year", "Churn")]
 
 # 25
 Model = glm(Churn ~ ID + Year, data = dfMINI, family = "binomial")
@@ -124,7 +124,7 @@ dfMINI_F = dfMINI_F[order(dfMINI_F$ID, dfMINI_F$Year),]
 dfMINI_F$Prediction = predict(Model, newdata = dfMINI_F, type = "response")
 
 # 30
-vStaticLifetimes =  aggregate(Prediction ~ ID, dfMINI_F, function(x){1/(1-x[1])} )
+vStaticLifetimes =  aggregate(Prediction ~ ID, dfMINI_F, function(x){10/(1-x[1])} )
 summary(vStaticLifetimes)
 
 
