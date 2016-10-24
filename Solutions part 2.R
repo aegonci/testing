@@ -11,6 +11,10 @@ load("X:/Analisten/TRaining/Casus/Week 1/Churn_nonstationary.RData")
 # 11
 mChurnDynamic = mChurnDynamic == "CHURN"
 
+# TWEEDE TEST
+C = 3
+D = 4*C
+
 #12
 mHistoryDynamic = matrix(0,iNoClients,iDuration)
 for (i in 2:iDuration){
