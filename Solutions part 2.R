@@ -8,6 +8,10 @@ iDuration = 100
 iNoClients = 100000
 load("X:/Analisten/TRaining/Casus/Week 1/Churn_nonstationary.RData")
 
+# ADDING SOME CODE HERE TO TEST HOW CHANGES ARE REGISTERED
+A = 5
+B = 2*A
+
 # 11
 mChurnDynamic = mChurnDynamic == "CHURN"
 
